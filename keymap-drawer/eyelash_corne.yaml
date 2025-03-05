@@ -95,7 +95,7 @@ layers:
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   - LGUI
-  - $$mdi:backspace-reverse-outline$$
+  - Sft+LGUI
   - {t: '$$mdi:transfer$$', type: trans}
   SYMBOL:
   - {t: '$$mdi:transfer$$', type: trans}
