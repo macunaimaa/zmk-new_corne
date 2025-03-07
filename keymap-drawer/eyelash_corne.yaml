@@ -42,12 +42,12 @@ layers:
   - {t: ., s: '>'}
   - {t: /, s: '?'}
   - $$mdi:keyboard-esc$$
-  - LGUI
   - NUMBER
+  - LGUI
   - {t: '$$mdi:keyboard-space$$', h: Fn}
   - {t: '$$mdi:keyboard-return$$', h: QWERTY}
   - SYMBOL
-  - $$mdi:apple-keyboard-option$$
+  - $$mdi:backspace-reverse-outline$$
   NUMBER:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '1', s: '!'}
@@ -91,8 +91,8 @@ layers:
   - RGB BRD
   - END
   - PG DN
-  - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - LGUI
   - Sft+LGUI
