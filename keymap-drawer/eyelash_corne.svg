@@ -519,13 +519,11 @@ rect.held, rect.combo.held {
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
 <use href="#mdi:keyboard-space" xlink:href="#mdi:keyboard-space" x="-9" y="-13" height="18" width="18.0" class="key tap glyph mdi:keyboard-space"/>
 </g>
-<g transform="translate(632, 224) rotate(-24.0)" class="key keypos-45">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
-<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
-<use href="#mdi:keyboard-return" xlink:href="#mdi:keyboard-return" x="-9" y="-13" height="18" width="18.0" class="key tap glyph mdi:keyboard-return"/>
-<a href="#QWERTY">
-<text x="0" y="24" class="key hold layer-activator">QWERTY</text>
-</a></g>
+<g transform="translate(632, 224) rotate(-24.0)" class="key enter keypos-45">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key enter side"/>
+<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key enter"/>
+<use href="#mdi:keyboard-return" xlink:href="#mdi:keyboard-return" x="-9" y="-13" height="18" width="18.0" class="key enter tap glyph mdi:keyboard-return"/>
+</g>
 <g transform="translate(695, 209) rotate(-12.0)" class="key keypos-46">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
@@ -539,6 +537,42 @@ rect.held, rect.combo.held {
 <a href="#Fn">
 <text x="0" y="24" class="key hold layer-activator">Fn</text>
 </a></g>
+<g class="combo combopos-0">
+<rect rx="6" ry="6" x="154" y="130" width="28" height="26" class="combo"/>
+<text x="168" y="143" class="combo tap">Ctl+C</text>
+</g>
+<g class="combo combopos-1">
+<rect rx="6" ry="6" x="266" y="137" width="28" height="26" class="combo"/>
+<text x="280" y="150" class="combo tap">Ctl+V</text>
+</g>
+<g class="combo combopos-2">
+<rect rx="6" ry="6" x="98" y="141" width="28" height="26" class="combo"/>
+<text x="112" y="154" class="combo tap">Ctl+X</text>
+</g>
+<g class="combo combopos-3">
+<rect rx="6" ry="6" x="266" y="25" width="28" height="26" class="combo"/>
+<text x="280" y="38" class="combo tap"><tspan style="font-size: 60%">&amp;rename_v…</tspan></text>
+</g>
+<g class="combo combopos-4">
+<path d="M574,126 l303,33" class="combo"/>
+<path d="M574,126 l-303,-33" class="combo"/>
+<rect rx="6" ry="6" x="560" y="113" width="28" height="26" class="combo"/>
+<text x="574" y="126" class="combo tap"><tspan style="font-size: 60%">&amp;search_f…</tspan></text>
+</g>
+<g class="combo combopos-5">
+<rect rx="6" ry="6" x="854" y="113" width="28" height="26" class="combo"/>
+<text x="868" y="126" class="combo tap"><tspan style="font-size: 60%">&amp;fuzzy_se…</tspan></text>
+</g>
+<g class="combo combopos-6">
+<rect rx="6" ry="6" x="854" y="141" width="28" height="26" class="combo"/>
+<text x="868" y="154" class="combo tap"><tspan style="font-size: 60%">&amp;buffer_s…</tspan></text>
+</g>
+<g class="combo combopos-7">
+<path d="M840,150 l38,7" class="combo"/>
+<path d="M840,150 l-38,-7" class="combo"/>
+<rect rx="6" ry="6" x="826" y="137" width="28" height="26" class="combo"/>
+<text x="840" y="150" class="combo tap"><tspan style="font-size: 60%">&amp;codebase…</tspan></text>
+</g>
 </g>
 </g>
 <g transform="translate(40, 318)" class="layer-NUMBER">
@@ -823,6 +857,42 @@ rect.held, rect.combo.held {
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key trans"/>
 <use href="#mdi:transfer" xlink:href="#mdi:transfer" x="-9" y="-13" height="18" width="18.0" class="key trans tap glyph mdi:transfer"/>
 </g>
+<g class="combo combopos-0">
+<rect rx="6" ry="6" x="154" y="130" width="28" height="26" class="combo"/>
+<text x="168" y="143" class="combo tap">Ctl+C</text>
+</g>
+<g class="combo combopos-1">
+<rect rx="6" ry="6" x="266" y="137" width="28" height="26" class="combo"/>
+<text x="280" y="150" class="combo tap">Ctl+V</text>
+</g>
+<g class="combo combopos-2">
+<rect rx="6" ry="6" x="98" y="141" width="28" height="26" class="combo"/>
+<text x="112" y="154" class="combo tap">Ctl+X</text>
+</g>
+<g class="combo combopos-3">
+<rect rx="6" ry="6" x="266" y="25" width="28" height="26" class="combo"/>
+<text x="280" y="38" class="combo tap"><tspan style="font-size: 60%">&amp;rename_v…</tspan></text>
+</g>
+<g class="combo combopos-4">
+<path d="M574,126 l303,33" class="combo"/>
+<path d="M574,126 l-303,-33" class="combo"/>
+<rect rx="6" ry="6" x="560" y="113" width="28" height="26" class="combo"/>
+<text x="574" y="126" class="combo tap"><tspan style="font-size: 60%">&amp;search_f…</tspan></text>
+</g>
+<g class="combo combopos-5">
+<rect rx="6" ry="6" x="854" y="113" width="28" height="26" class="combo"/>
+<text x="868" y="126" class="combo tap"><tspan style="font-size: 60%">&amp;fuzzy_se…</tspan></text>
+</g>
+<g class="combo combopos-6">
+<rect rx="6" ry="6" x="854" y="141" width="28" height="26" class="combo"/>
+<text x="868" y="154" class="combo tap"><tspan style="font-size: 60%">&amp;buffer_s…</tspan></text>
+</g>
+<g class="combo combopos-7">
+<path d="M840,150 l38,7" class="combo"/>
+<path d="M840,150 l-38,-7" class="combo"/>
+<rect rx="6" ry="6" x="826" y="137" width="28" height="26" class="combo"/>
+<text x="840" y="150" class="combo tap"><tspan style="font-size: 60%">&amp;codebase…</tspan></text>
+</g>
 </g>
 </g>
 <g transform="translate(40, 637)" class="layer-SYMBOL">
@@ -1085,6 +1155,42 @@ rect.held, rect.combo.held {
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key trans"/>
 <use href="#mdi:transfer" xlink:href="#mdi:transfer" x="-9" y="-13" height="18" width="18.0" class="key trans tap glyph mdi:transfer"/>
 </g>
+<g class="combo combopos-0">
+<rect rx="6" ry="6" x="154" y="130" width="28" height="26" class="combo"/>
+<text x="168" y="143" class="combo tap">Ctl+C</text>
+</g>
+<g class="combo combopos-1">
+<rect rx="6" ry="6" x="266" y="137" width="28" height="26" class="combo"/>
+<text x="280" y="150" class="combo tap">Ctl+V</text>
+</g>
+<g class="combo combopos-2">
+<rect rx="6" ry="6" x="98" y="141" width="28" height="26" class="combo"/>
+<text x="112" y="154" class="combo tap">Ctl+X</text>
+</g>
+<g class="combo combopos-3">
+<rect rx="6" ry="6" x="266" y="25" width="28" height="26" class="combo"/>
+<text x="280" y="38" class="combo tap"><tspan style="font-size: 60%">&amp;rename_v…</tspan></text>
+</g>
+<g class="combo combopos-4">
+<path d="M574,126 l303,33" class="combo"/>
+<path d="M574,126 l-303,-33" class="combo"/>
+<rect rx="6" ry="6" x="560" y="113" width="28" height="26" class="combo"/>
+<text x="574" y="126" class="combo tap"><tspan style="font-size: 60%">&amp;search_f…</tspan></text>
+</g>
+<g class="combo combopos-5">
+<rect rx="6" ry="6" x="854" y="113" width="28" height="26" class="combo"/>
+<text x="868" y="126" class="combo tap"><tspan style="font-size: 60%">&amp;fuzzy_se…</tspan></text>
+</g>
+<g class="combo combopos-6">
+<rect rx="6" ry="6" x="854" y="141" width="28" height="26" class="combo"/>
+<text x="868" y="154" class="combo tap"><tspan style="font-size: 60%">&amp;buffer_s…</tspan></text>
+</g>
+<g class="combo combopos-7">
+<path d="M840,150 l38,7" class="combo"/>
+<path d="M840,150 l-38,-7" class="combo"/>
+<rect rx="6" ry="6" x="826" y="137" width="28" height="26" class="combo"/>
+<text x="840" y="150" class="combo tap"><tspan style="font-size: 60%">&amp;codebase…</tspan></text>
+</g>
 </g>
 </g>
 <g transform="translate(40, 955)" class="layer-Fn">
@@ -1338,6 +1444,42 @@ rect.held, rect.combo.held {
 <g transform="translate(756, 203)" class="key held keypos-47">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key held side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key held"/>
+</g>
+<g class="combo combopos-0">
+<rect rx="6" ry="6" x="154" y="130" width="28" height="26" class="combo"/>
+<text x="168" y="143" class="combo tap">Ctl+C</text>
+</g>
+<g class="combo combopos-1">
+<rect rx="6" ry="6" x="266" y="137" width="28" height="26" class="combo"/>
+<text x="280" y="150" class="combo tap">Ctl+V</text>
+</g>
+<g class="combo combopos-2">
+<rect rx="6" ry="6" x="98" y="141" width="28" height="26" class="combo"/>
+<text x="112" y="154" class="combo tap">Ctl+X</text>
+</g>
+<g class="combo combopos-3">
+<rect rx="6" ry="6" x="266" y="25" width="28" height="26" class="combo"/>
+<text x="280" y="38" class="combo tap"><tspan style="font-size: 60%">&amp;rename_v…</tspan></text>
+</g>
+<g class="combo combopos-4">
+<path d="M574,126 l303,33" class="combo"/>
+<path d="M574,126 l-303,-33" class="combo"/>
+<rect rx="6" ry="6" x="560" y="113" width="28" height="26" class="combo"/>
+<text x="574" y="126" class="combo tap"><tspan style="font-size: 60%">&amp;search_f…</tspan></text>
+</g>
+<g class="combo combopos-5">
+<rect rx="6" ry="6" x="854" y="113" width="28" height="26" class="combo"/>
+<text x="868" y="126" class="combo tap"><tspan style="font-size: 60%">&amp;fuzzy_se…</tspan></text>
+</g>
+<g class="combo combopos-6">
+<rect rx="6" ry="6" x="854" y="141" width="28" height="26" class="combo"/>
+<text x="868" y="154" class="combo tap"><tspan style="font-size: 60%">&amp;buffer_s…</tspan></text>
+</g>
+<g class="combo combopos-7">
+<path d="M840,150 l38,7" class="combo"/>
+<path d="M840,150 l-38,-7" class="combo"/>
+<rect rx="6" ry="6" x="826" y="137" width="28" height="26" class="combo"/>
+<text x="840" y="150" class="combo tap"><tspan style="font-size: 60%">&amp;codebase…</tspan></text>
 </g>
 </g>
 </g>
