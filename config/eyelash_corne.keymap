@@ -51,16 +51,110 @@
         tap-ms = <100>;
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        copy {
+            bindings = <&kp LC(C)>;
+            key-positions = <31 30>;
+        };
+
+        paste {
+            bindings = <&kp LC(V)>;
+            key-positions = <33 32>;
+        };
+
+        cut {
+            bindings = <&kp LC(X)>;
+            key-positions = <29 30>;
+        };
+
+        rename_variable {
+            bindings = <&rename_variable_nvim>;
+            key-positions = <5 4>;
+        };
+
+        search_files {
+            bindings = <&search_files_nvim>;
+            key-positions = <40 17>;
+        };
+
+        search_fuzzy {
+            bindings = <&fuzzy_search_nvim>;
+            key-positions = <40 25>;
+        };
+
+        buffer_symbols {
+            bindings = <&buffer_symbols>;
+            key-positions = <40 39>;
+        };
+
+        codebase_symbols {
+            bindings = <&codebase_symbols>;
+            key-positions = <40 38>;
+        };
+    };
+
+    macros {
+        fuzzy_search_nvim: fuzzy_search_nvim {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE &kp SLASH>, <&macro_release>;
+
+            label = "FUZZY_SEARCH_NVIM";
+        };
+
+        search_grep_nvim: search_grep_nvim {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE &kp S &kp G>, <&macro_release>;
+
+            label = "SEARCH_GREP_NVIM";
+        };
+
+        search_files_nvim: search_files_nvim {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE &kp S &kp F>, <&macro_release>;
+
+            label = "SEARCH_FILES_NVIM";
+        };
+
+        rename_variable_nvim: rename_variable_nvim {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp G &kp R &kp N>, <&macro_release>;
+
+            label = "RENAME_VARIABLE_NVIM";
+        };
+
+        codebase_symbols: codebase_symbols {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp G &kp LS(W)>, <&macro_release>;
+
+            label = "CODEBASE_SYMBOLS";
+        };
+
+        buffer_symbols: buffer_symbols {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp G &kp LS(O)>, <&macro_release>;
+
+            label = "BUFFER_SYMBOLS";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             display-name = "QWERTY";
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E  &kp R     &kp T                              &kp UP                &kp Y        &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&td0       &kp A  &kp S  &kp D  &kp F     &kp G                    &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LCTRL  &kp Z  &kp X  &kp C  &kp V     &kp B      &bl BL_TOG              &kp DOWN              &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                         &mo 1  &kp LGUI  &kp SPACE                                                &lt 0 ENTER  &mo 2  &lt 3 DEL
+&kp TAB    &kp Q  &kp W  &kp E  &kp R     &kp T                              &kp UP                &kp Y      &kp U  &kp I      &kp O    &kp P     &kp BSPC
+&td0       &kp A  &kp S  &kp D  &kp F     &kp G                    &kp LEFT  &kp ENTER  &kp RIGHT  &kp H      &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LCTRL  &kp Z  &kp X  &kp C  &kp V     &kp B      &bl BL_TOG              &kp DOWN              &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
+                         &mo 1  &kp LGUI  &kp SPACE                                                &kp ENTER  &mo 2  &lt 3 DEL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
