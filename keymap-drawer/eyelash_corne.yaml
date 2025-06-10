@@ -35,7 +35,7 @@ layers:
   - C
   - V
   - B
-  - '&bl BL_TOG'
+  - {t: Fn, h: toggle}
   - $$mdi:arrow-down-bold$$
   - N
   - M
@@ -48,7 +48,7 @@ layers:
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - SYMBOL
-  - {t: '$$mdi:backspace-reverse-outline$$', h: Fn}
+  - $$mdi:apple-keyboard-option$$
   NUMBER:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '1', s: '!'}
@@ -62,7 +62,7 @@ layers:
   - {t: '8', s: '*'}
   - {t: '9', s: (}
   - {t: '0', s: )}
-  - {t: '$$mdi:backspace$$', type: backspace}
+  - $$mdi:backspace-reverse-outline$$
   - {t: '$$mdi:transfer$$', type: trans}
   - BT CLR ALL
   - {h: '1', s: '$$mdi:bluetooth-connect$$'}
@@ -195,21 +195,4 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {type: held}
-combos:
-- p: [31, 30]
-  k: Ctl+C
-- p: [33, 32]
-  k: Ctl+V
-- p: [29, 30]
-  k: Ctl+X
-- p: [5, 4]
-  k: '&rename_variable_nvim'
-- p: [40, 17]
-  k: '&search_files_nvim'
-- p: [40, 25]
-  k: '&fuzzy_search_nvim'
-- p: [40, 39]
-  k: '&buffer_symbols'
-- p: [40, 38]
-  k: '&codebase_symbols'
+  - {t: '$$mdi:transfer$$', type: trans}
