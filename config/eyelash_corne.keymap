@@ -10,6 +10,7 @@
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
 
+
 &mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
 
 &msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
@@ -50,7 +51,66 @@
         tap-ms = <100>;
     };
 
-    combos { compatible = "zmk,combos"; };
+    combos { 
+        compatible = "zmk,combos";
+        
+        // PyCharm quick access combos
+        combo_pycharm_layer {
+            timeout-ms = <50>;
+            key-positions = <37 40>; // Both inner thumb keys
+            bindings = <&mo 4>; // Access PyCharm layer
+            layers = <0>; // Only on QWERTY layer
+        };
+        
+        combo_run {
+            timeout-ms = <50>;
+            key-positions = <4 5>; // R and T keys
+            bindings = <&kp LS(F10)>; // Run
+            layers = <0>;
+        };
+        
+        combo_debug {
+            timeout-ms = <50>;
+            key-positions = <5 6>; // T and Y keys  
+            bindings = <&kp LS(F9)>; // Debug
+            layers = <0>;
+        };
+        
+        combo_find_file {
+            timeout-ms = <50>;
+            key-positions = <3 4>; // E and R keys
+            bindings = <&kp LC(LS(N))>; // Go to file
+            layers = <0>;
+        };
+        
+        combo_refactor_layer {
+            timeout-ms = <50>;
+            key-positions = <16 17>; // F and G keys
+            bindings = <&mo 5>; // Access Refactor layer
+            layers = <4>; // Only when PyCharm layer is active
+        };
+        
+        combo_extract_method {
+            timeout-ms = <50>;
+            key-positions = <15 16>; // F and G keys on QWERTY
+            bindings = <&kp LC(LA(M))>; // Extract Method
+            layers = <0>;
+        };
+        
+        combo_extract_variable {
+            timeout-ms = <50>;
+            key-positions = <28 29>; // M and Comma keys
+            bindings = <&kp LC(LA(V))>; // Extract Variable
+            layers = <0>;
+        };
+        
+        combo_rename {
+            timeout-ms = <50>;
+            key-positions = <4 16>; // R and F keys
+            bindings = <&kp LS(F6)>; // Rename
+            layers = <0>;
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -102,5 +162,107 @@
 
             sensor-bindings = <&scroll_encoder>;
         };
+
+        pycharm_layer {
+            display-name = "PyCharm";
+            bindings = <
+&trans  &kp LC(N)     &kp LC(LS(N))  &kp LC(F)     &kp LC(R)     &kp LC(G)                             &mmv MOVE_UP                     &kp LS(F10)   &kp LS(F9)    &kp LC(LS(F))  &kp F2        &kp LS(F6)    &kp LC(SLASH)
+&trans  &kp LA(F7)    &kp LC(Q)      &kp LC(P)     &kp LC(LA(B)) &kp F6                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp F8        &kp F7        &kp LC(F8)     &kp LA(F9)    &kp LC(Y)     &kp LC(LS(Y))
+&trans  &kp LC(Z)     &kp LC(X)      &kp LC(C)     &kp LC(V)     &kp LC(D)   &trans                    &mmv MOVE_DOWN                   &kp F9        &kp F10       &kp F11        &kp LA(LEFT)  &kp LA(RIGHT) &kp LC(LA(L))
+                                     &trans        &trans        &trans                                                                  &trans        &mo 5         &trans
+            >;
+
+            sensor-bindings = <&scroll_encoder>;
+        };
+
+        pycharm_refactor_layer {
+            display-name = "Refactor";
+            bindings = <
+&trans  &kp LC(LA(N))    &kp LC(LA(C))    &kp LC(LA(F))    &kp LC(LA(P))    &kp LC(LA(T))                          &mmv MOVE_UP                     &kp LC(LA(M))    &kp LC(LA(V))    &kp LC(LA(FSLH))  &kp LC(LA(S))    &kp LC(LA(I))    &kp LC(LS(T))
+&trans  &kp LC(LA(L))    &kp LC(H)        &kp LC(LA(R))    &kp LC(LA(E))    &kp LC(U)                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LA(INS)      &kp LC(LA(D))    &kp LC(T)        &kp LC(F12)      &kp LA(F1)       &kp LC(LA(U))
+&trans  &kp LS(F6)       &kp F6           &kp LC(F6)       &kp LC(LA(LS(M))) &kp LC(LA(LS(T))) &trans                    &mmv MOVE_DOWN                   &kp LC(LA(LS(U))) &kp LC(LA(LS(D))) &kp LC(LA(LS(F))) &kp LC(LA(LS(P))) &kp LC(LA(LS(A))) &kp LC(LA(LS(S)))
+                                          &trans           &trans           &trans                                                                     &trans           &trans           &trans
+            >;
+
+            sensor-bindings = <&scroll_encoder>;
+        };
     };
 };
+
+/*
+ * PyCharm Layer (Layer 4) Key Mappings:
+ * 
+ * LEFT SIDE - Navigation & Search:
+ * ┌──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────┐
+ * │ Ctrl+N       │ Ctrl+Shift+N │ Ctrl+F       │ Ctrl+R       │ Ctrl+G       │ Ctrl+B       │
+ * │ Go to Class  │ Go to File   │ Find         │ Replace      │ Go to Line   │ Go to Decl   │
+ * ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+ * │ Alt+F7       │ Ctrl+Q       │ Ctrl+P       │ Ctrl+Alt+B   │ F6           │ Ctrl+Alt+M   │
+ * │ Find Usages  │ Quick Doc    │ Param Info   │ Go to Impl   │ Move         │ Extract Mthd │
+ * ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+ * │ Ctrl+Z       │ Ctrl+X       │ Ctrl+C       │ Ctrl+V       │ Ctrl+D       │ F12          │
+ * │ Undo         │ Cut          │ Copy         │ Paste        │ Duplicate    │ Back         │
+ * └──────────────┴──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤
+ *                                              │ TRANS        │ TRANS        │ TRANS        │
+ *                                              └──────────────┴──────────────┴──────────────┘
+ * 
+ * RIGHT SIDE - Run/Debug & Actions:
+ * ┌──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────┐
+ * │ Shift+F10    │ Shift+F9     │ Ctrl+Shift+F │ F2           │ Shift+F6     │ Ctrl+/       │
+ * │ Run          │ Debug        │ Find in File │ Next Error   │ Rename       │ Comment      │
+ * ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+ * │ F8           │ F7           │ Ctrl+F8      │ Alt+F9       │ Ctrl+Y       │ Ctrl+Shift+Y │
+ * │ Step Over    │ Step Into    │ Breakpoint   │ Run to Cur   │ Delete Line  │ Delete Line  │
+ * ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+ * │ F9           │ F10          │ F11          │ Alt+Left     │ Alt+Right    │ Ctrl+Alt+L   │
+ * │ Resume       │ Step Out     │ Full Screen  │ Back         │ Forward      │ Format Code  │
+ * ┌──────────────┼──────────────┼──────────────┼──────────────┴──────────────┴──────────────┘
+ * │ TRANS        │ REFACTOR→    │ TRANS        │
+ * └──────────────┴──────────────┴──────────────┘
+ * 
+ * Refactor Layer (Layer 5) Key Mappings:
+ * Access: From PyCharm layer, hold the middle thumb key OR use F+G combo
+ * 
+ * LEFT SIDE - Extract & Inline Operations:
+ * ┌──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────┐
+ * │ Ctrl+Alt+N   │ Ctrl+Alt+C   │ Ctrl+Alt+F   │ Ctrl+Alt+P   │ Ctrl+Alt+T   │              │
+ * │ Inline       │ Extract Const│ Extract Field│ Extract Param│ Surround With│              │
+ * ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+ * │ Ctrl+Alt+L   │ Ctrl+H       │ Ctrl+Alt+R   │ Ctrl+Alt+E   │ Ctrl+U       │              │
+ * │ Reformat Code│ Type Hier    │ Replace      │ Recent Edit  │ Super Method │              │
+ * ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+ * │ Shift+F6     │ F6           │ Ctrl+F6      │ CA+Shift+M   │ CA+Shift+T   │              │
+ * │ Rename       │ Move         │ Copy         │ Move Members │ Move Static  │              │
+ * └──────────────┴──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤
+ *                                              │ TRANS        │ TRANS        │ TRANS        │
+ *                                              └──────────────┴──────────────┴──────────────┘
+ * 
+ * RIGHT SIDE - Advanced Refactoring & Structure:
+ * ┌──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────┐
+ * │ Ctrl+Alt+M   │ Ctrl+Alt+V   │ Ctrl+Alt+/   │ Ctrl+Alt+S   │ Ctrl+Alt+I   │ Ctrl+Shift+T │
+ * │ Extract Mthd │ Extract Var  │ Extract Iface│ Settings     │ Implement    │ Create Test  │
+ * ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+ * │ Alt+Insert   │ Ctrl+Alt+D   │ Ctrl+T       │ Ctrl+F12     │ Alt+F1       │ Ctrl+Alt+U   │
+ * │ Generate     │ Introduce    │ Refactor Menu│ File Structure│ Select Target│ UML Diagram  │
+ * ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+ * │ CA+Shift+U   │ CA+Shift+D   │ CA+Shift+F   │ CA+Shift+P   │ CA+Shift+A   │ CA+Shift+S   │
+ * │ Turn Into    │ Convert       │ Change Sig   │ Pull Up      │ Abstract     │ Safe Delete  │
+ * ┌──────────────┼──────────────┼──────────────┼──────────────┴──────────────┴──────────────┘
+ * │ TRANS        │ TRANS        │ TRANS        │
+ * └──────────────┴──────────────┴──────────────┘
+ * 
+ * Access Methods:
+ * 1. COMBO: Hold both inner thumb keys (Space + Enter) to access PyCharm layer
+ * 2. From PyCharm layer: Hold middle thumb key to access Refactor layer
+ * 3. Quick refactor combos on QWERTY layer:
+ *    - R+T: Run (Shift+F10)
+ *    - T+Y: Debug (Shift+F9)  
+ *    - E+R: Go to File (Ctrl+Shift+N)
+ *    - ,+.: Comment/Uncomment (Ctrl+/)
+ *    - F+G: Extract Method (Ctrl+Alt+M)
+ *    - M+,: Extract Variable (Ctrl+Alt+V)  
+ *    - R+F: Rename (Shift+F6)
+ * 
+ * Abbreviations:
+ * CA = Ctrl+Alt, CS = Ctrl+Shift, CAS = Ctrl+Alt+Shift
+ */
