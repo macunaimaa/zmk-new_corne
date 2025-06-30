@@ -48,7 +48,7 @@ layers:
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - SYMBOL
-  - $$mdi:apple-keyboard-option$$
+  - {t: '$$mdi:apple-keyboard-option$$', h: Fn}
   NUMBER:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '1', s: '!'}
@@ -195,4 +195,4 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {type: held}
