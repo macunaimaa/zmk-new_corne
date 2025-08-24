@@ -54,54 +54,6 @@
         compatible = "zmk,combos";
 
         // PyCharm quick access combos
-
-        combo_run {
-            timeout-ms = <50>;
-            key-positions = <4 5>; // R and T keys
-            bindings = <&kp LS(F10)>; // Run
-            layers = <0>;
-            require-prior-idle-ms = <300>;
-        };
-
-        combo_debug {
-            timeout-ms = <50>;
-            key-positions = <5 7>; // T and Y keys  
-            bindings = <&kp LS(F9)>; // Debug
-            layers = <0>;
-            require-prior-idle-ms = <300>;
-        };
-
-        combo_find_file {
-            timeout-ms = <50>;
-            key-positions = <3 4>; // E and R keys
-            bindings = <&kp LC(LS(N))>; // Go to file
-            layers = <0>;
-            require-prior-idle-ms = <300>;
-        };
-
-        combo_extract_method {
-            timeout-ms = <50>;
-            key-positions = <15 16>; // F and G keys on QWERTY
-            bindings = <&kp LC(LA(M))>; // Extract Method
-            layers = <0>;
-            require-prior-idle-ms = <300>;
-        };
-
-        combo_extract_variable {
-            timeout-ms = <50>;
-            key-positions = <28 29>; // M and Comma keys
-            bindings = <&kp LC(LA(V))>; // Extract Variable
-            layers = <0>;
-            require-prior-idle-ms = <200>;
-        };
-
-        combo_rename {
-            timeout-ms = <50>;
-            key-positions = <4 16>; // R and F keys
-            bindings = <&kp LS(F6)>; // Rename
-            layers = <0>;
-            require-prior-idle-ms = <200>;
-        };
     };
 
     keymap {
